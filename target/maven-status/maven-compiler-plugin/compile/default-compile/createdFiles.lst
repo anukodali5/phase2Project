@@ -1,0 +1,8 @@
+pages\BasePage.class
+pages\ProductsPage.class
+pages\TestString.class
+pages\LoginPage.class
+pages\CartPage.class
+pages\CheckoutPage.class
+utils\DataUtils.class
+pages\ProfilePage.class
