@@ -10,7 +10,7 @@ import com.codoid.products.fillo.Recordset;
 public class DataUtils {
 
 	public static String getTestData(String sheetName, String fieldName) throws Exception {
-		// System.out.println("our execution env is :" + System.getProperty("env"));
+		System.out.println("our execution env is :" + System.getProperty("env"));
 		String result = "unable to access data";
 
 		String datFilePath = System.getProperty("user.dir") + File.separator + "resources" + File.separator

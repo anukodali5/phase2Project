@@ -1,14 +1,23 @@
 package com.bdd.test.scenarios;
 
+import java.util.List;
+import java.util.Map;
+
 import io.cucumber.core.api.Scenario;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import testcases.BaseTest;
 
 public class loginStepsDefinations extends BaseTest {
+	// By addToCartButton =
+	// By.xpath("//button[@id='add-to-cart-sauce-labs-backpack']");
+
+	// By clickOnCart = By.xpath(" //span[@class='shopping_cart_badge']");
 
 	// Hooks
 	@Before
@@ -26,41 +35,53 @@ public class loginStepsDefinations extends BaseTest {
 		System.out.println("The user is login page");
 	}
 
-	@When("The user enter the {string} in username field and {string} in password field and click login button")
-	public void verifyLoginCredentails(String user, String pass) {
-		loginPage.loginToApplication(user, pass);
+	@When("The user enter the the following credentails")
+	public void verifyLoginCredentails(DataTable dt) {
+		List<Map<String, String>> logindata = dt.asMaps(String.class, String.class);
+		System.out.println(logindata.get(0).get("Username"));
+		System.out.println(logindata.get(0).get("Password"));
+		loginPage.loginToApplication(logindata.get(0).get("Username"), logindata.get(0).get("Password"));
 	}
 
-	@Then("Login should be successful")
+	@Then("User should be landed on the Products Page")
+
 	public void displaySucessMsg() {
-		System.out.println("user login is succesful");
+
+		System.out.println("user login is succesful and is on the Products page");
 	}
 
-	@Given("The user is on Products page")
-	public void verifyUserProductPage() {
-		System.out.println("user is on Products Page");
+	@When("User landed at Product page after logged in successfully")
+	public void Vreify() {
+		System.out.println("Hi");
 	}
 
-	@When("The user will click on the ADD TO CART \r\n" + "And the cart symbol\r\n" + "And navigates to Cart page\r\n"
-			+ "And click on Checkout button\r\n" + "And user navigates to Profile page\r\n"
-			+ "And user complets the profile data\r\n" + "And user clicks on continue\r\n"
-			+ "And user navigates to checkout page\r\n" + "And user verifies the product name , product price\r\n"
-			+ "And user calulates the total price by adding the tax\r\n" + "And user Clicks on the finish")
-	public void verifyProductAddedToCart() {
+	@Then("User should be able to notice the Shopping Cart icon badge changed")
+	public void verifyAddProductToCart() {
 		productsPage.AddToCart();
-		productsPage.ClickOnCart();
 		productsPage.ProductName();
+
+	}
+
+	@And("User should be able examine the item in Shopping cart")
+	public void verifyCart() {
+		productsPage.ClickOnCart();
+	}
+
+	@And("user clicks on checkout")
+	public void clickOnCheckout() {
 		cartpage.Checkout();
-		ProfilePage.Profile("FName", "LName", "12345");
+	}
+
+	@And("User provides profile info clicks on Continue button")
+	public void clickOnContinue() {
+		ProfilePage.Profile("FName", "LName", "ZipCode");
+	}
+
+	@And("User is on products overview page clciks on Finish")
+	public void clickOnFinish() {
 		checkoutpage.VerifyProductAndPrice();
 		checkoutpage.FinalPrice();
 		checkoutpage.ClickFinish();
 		checkoutpage.ConfirmationPageMsg();
-
-	}
-
-	@Then("User navigates to Complete page")
-	public void verifyCartPage() {
-		System.out.println("user is on Complete Page");
 	}
 }

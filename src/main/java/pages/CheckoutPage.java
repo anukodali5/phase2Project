@@ -8,10 +8,7 @@ import org.testng.Assert;
 public class CheckoutPage extends BasePage {
 
 	By verifyProductName = By.xpath("//div[@class='inventory_item_name']");
-	// String verifyProductName = "//div[@class='inventory_item_name']";
 	By verifyProductPrice = By.xpath("//div[@class='inventory_item_price']");
-	// String verifyProductPrice = "//div[@class='inventory_item_price']";
-	// String tax = "//div[@class='summary_tax_label']";
 	By tax = By.xpath("//div[@class='summary_tax_label']");
 	By finishBtn = By.xpath("//button[@id='finish']");
 	By confirmationmsg = By.xpath("//h2[normalize-space()='THANK YOU FOR YOUR ORDER']");
@@ -49,17 +46,14 @@ public class CheckoutPage extends BasePage {
 	public void ConfirmationPageMsg() {
 
 		String confirmationPage = getText(confirmationmsg);
-		// System.out.println(confirmationPage);
 		String expectedconfirmationMsg = "THANK YOU FOR YOUR ORDER";
 		Assert.assertEquals(confirmationPage, expectedconfirmationMsg, "They should be equal");
-		System.out.println("Product name:" + productName);
-		System.out.println("product price:" + productPrice);
 
 	}
 
 	public void VerifyProductAndPrice() {
-		Assert.assertEquals(getText(verifyProductName), productName);
-		Assert.assertEquals(getText(verifyProductPrice), productPrice);
+		Assert.assertEquals(getText(verifyProductName), productName, "verifyProductName should be equal");
+		Assert.assertEquals(getText(verifyProductPrice), productPrice, "verifyProductPrice should be equal");
 	}
 
 }

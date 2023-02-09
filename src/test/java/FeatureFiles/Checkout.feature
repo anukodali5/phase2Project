@@ -19,24 +19,17 @@
 Feature:  Checkout Module
 Background: Login and go to Products page
 Given The user is on login page
-When  The user enter the "standard_user" in username field and "secret_sauce" in password field and click login button
-Then  Login is successful
+When  The user enter the the following credentails
+|Username|Password|
+|standard_user|secret_sauce|
+Then  User should be landed on the Products Page
 
-
-@smoke @products @positive @critical
+@smoke @checkout @positive @critical
 Scenario: user is on the Products page
-Given The user is on Products page
-When  The user will click on the ADD TO CART 
-And the cart symbol
-And navigates to Cart page
-And click on Checkout button
-And user navigates to Profile page
-And user complets the profile data
-And user clicks on continue
-And user navigates to checkout page
-And user verifies the product name , product price
-And user calulates the total price by adding the tax
-And user Clicks on the finish
-Then  User navigates to Complete page
 
-
+When  User landed at Product page after logged in successfully
+Then User should be able to notice the Shopping Cart icon badge changed
+    And User should be able examine the item in Shopping cart
+    And user clicks on checkout
+    And User provides profile info clicks on Continue button
+    And User is on products overview page clciks on Finish

@@ -24,6 +24,10 @@
     <name>env</name> 
     <value>stage</value> 
     </property>
+    <property>  
+    <name>dataproviderthreadcount</name> 
+    <value>${threadCount}</value> 
+    </property>
   </systemProperties>
 	       </configuration>
 	     </plugin>

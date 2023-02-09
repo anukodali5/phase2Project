@@ -20,5 +20,7 @@ Feature:  Login Module
 @smoke @login @positive @critical
 Scenario: Verify that login is working with correct credentails
 Given The user is on login page
-When  The user enter the "standard_user" in username field and "secret_sauce" in password field and click login button
-Then  Login is successful
+When  The user enter the the following credentails
+|Username|Password|
+|standard_user|secret_sauce|
+Then  User should be landed on the Products Page

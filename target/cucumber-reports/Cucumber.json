@@ -1,0 +1,299 @@
+[
+  {
+    "line": 19,
+    "elements": [
+      {
+        "line": 20,
+        "name": "Login and go to Products page",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 162800,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "The user is on login page",
+            "match": {
+              "location": "loginStepsDefinations.verifyLogin()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 10390055200,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "The user enter the the following credentails",
+            "match": {
+              "location": "loginStepsDefinations.verifyLoginCredentails(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Username",
+                  "Password"
+                ]
+              },
+              {
+                "cells": [
+                  "standard_user",
+                  "secret_sauce"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 143700,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "User should be landed on the Products Page",
+            "match": {
+              "location": "loginStepsDefinations.displaySucessMsg()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-02-09T20:15:27.680Z",
+        "before": [
+          {
+            "result": {
+              "duration": 3566581700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "loginStepsDefinations.setUPDriverAndPageObjects(Scenario)"
+            }
+          }
+        ],
+        "line": 28,
+        "name": "user is on the Products page",
+        "description": "",
+        "id": "checkout-module;user-is-on-the-products-page",
+        "after": [
+          {
+            "result": {
+              "duration": 187821100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "loginStepsDefinations.performCleanUp(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 45300,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "User landed at Product page after logged in successfully",
+            "match": {
+              "location": "loginStepsDefinations.Vreify()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 10109502400,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "User should be able to notice the Shopping Cart icon badge changed",
+            "match": {
+              "location": "loginStepsDefinations.verifyAddProductToCart()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 100060859300,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "User should be able examine the item in Shopping cart",
+            "match": {
+              "location": "loginStepsDefinations.verifyCart()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 10066915300,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "user clicks on checkout",
+            "match": {
+              "location": "loginStepsDefinations.clickOnCheckout()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 10264041900,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "User provides profile info clicks on Continue button",
+            "match": {
+              "location": "loginStepsDefinations.clickOnContinue()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 10184636700,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "User is on products overview page clciks on Finish",
+            "match": {
+              "location": "loginStepsDefinations.clickOnFinish()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke"
+          },
+          {
+            "name": "@checkout"
+          },
+          {
+            "name": "@positive"
+          },
+          {
+            "name": "@critical"
+          }
+        ]
+      }
+    ],
+    "name": "Checkout Module",
+    "description": "",
+    "id": "checkout-module",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/FeatureFiles/Checkout.feature",
+    "tags": []
+  },
+  {
+    "line": 19,
+    "elements": [
+      {
+        "start_timestamp": "2023-02-09T20:15:27.680Z",
+        "before": [
+          {
+            "result": {
+              "duration": 3555655000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "loginStepsDefinations.setUPDriverAndPageObjects(Scenario)"
+            }
+          }
+        ],
+        "line": 21,
+        "name": "Verify that login is working with correct credentails",
+        "description": "",
+        "id": "login-module;verify-that-login-is-working-with-correct-credentails",
+        "after": [
+          {
+            "result": {
+              "duration": 242469700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "loginStepsDefinations.performCleanUp(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 336000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "The user is on login page",
+            "match": {
+              "location": "loginStepsDefinations.verifyLogin()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 10442479900,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "The user enter the the following credentails",
+            "match": {
+              "location": "loginStepsDefinations.verifyLoginCredentails(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Username",
+                  "Password"
+                ]
+              },
+              {
+                "cells": [
+                  "standard_user",
+                  "secret_sauce"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1130800,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "User should be landed on the Products Page",
+            "match": {
+              "location": "loginStepsDefinations.displaySucessMsg()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke"
+          },
+          {
+            "name": "@login"
+          },
+          {
+            "name": "@positive"
+          },
+          {
+            "name": "@critical"
+          }
+        ]
+      }
+    ],
+    "name": "Login Module",
+    "description": "",
+    "id": "login-module",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/FeatureFiles/login.feature",
+    "tags": []
+  }
+]
