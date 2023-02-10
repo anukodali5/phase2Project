@@ -80,7 +80,7 @@ formatter.step({
   "keyword": "When "
 });
 formatter.match({
-  "location": "loginStepsDefinations.Vreify()"
+  "location": "loginStepsDefinations.Verify()"
 });
 formatter.result({
   "status": "passed"

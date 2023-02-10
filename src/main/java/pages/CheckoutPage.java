@@ -22,14 +22,15 @@ public class CheckoutPage extends BasePage {
 	public void FinalPrice() {
 		// System.out.println(getText(tax));
 		String taxamount = getText(tax); // Tax: $2.40
-		String ProductPeice = getText(verifyProductPrice); // $29.99
+		String ProductPrice = getText(verifyProductPrice); // $29.99
 		float finalPrice = Float.parseFloat(taxamount.substring(6, taxamount.length()))
-				+ Float.parseFloat(ProductPeice.substring(1, ProductPeice.length()));
+				+ Float.parseFloat(ProductPrice.substring(1, ProductPrice.length()));
 		System.out.println("Total price of the Product:" + "$" + finalPrice);
 
 		// if (taxamount > 0) {
 		// String TotalPrice = ProductPeice + taxamount;
 		// System.out.println(TotalPrice);
+		String ProductName = getText(verifyProductName);
 
 	}
 

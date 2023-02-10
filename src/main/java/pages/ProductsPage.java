@@ -31,8 +31,8 @@ public class ProductsPage extends BasePage {
 	}
 
 	public void ClickOnCart() {
-		System.out.println("clickOnCart");
-		System.out.println(clickOnCart);
+		// System.out.println("clickOnCart");
+		// System.out.println(clickOnCart);
 		clickElement(clickOnCart);
 		try {
 			Thread.sleep(100000);

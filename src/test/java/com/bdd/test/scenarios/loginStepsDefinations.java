@@ -51,8 +51,8 @@ public class loginStepsDefinations extends BaseTest {
 	}
 
 	@When("User landed at Product page after logged in successfully")
-	public void Vreify() {
-		System.out.println("Hi");
+	public void Verify() {
+		System.out.println("User is on Products page");
 	}
 
 	@Then("User should be able to notice the Shopping Cart icon badge changed")
